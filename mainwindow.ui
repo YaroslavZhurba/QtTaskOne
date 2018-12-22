@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QHBoxLayout" name="horizontalLayout">
+   <layout class="QVBoxLayout" name="verticalLayout">
     <property name="leftMargin">
      <number>0</number>
     </property>
@@ -29,6 +29,28 @@
     </property>
     <item>
      <widget class="QTreeWidget" name="treeWidget">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:black
+</string>
+      </property>
+      <property name="alternatingRowColors">
+       <bool>true</bool>
+      </property>
+      <property name="allColumnsShowFocus">
+       <bool>false</bool>
+      </property>
+      <property name="columnCount">
+       <number>4</number>
+      </property>
+      <attribute name="headerCascadingSectionResizes">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="headerDefaultSectionSize">
+       <number>10</number>
+      </attribute>
       <attribute name="headerMinimumSectionSize">
        <number>100</number>
       </attribute>
@@ -37,7 +59,17 @@
       </attribute>
       <column>
        <property name="text">
-        <string>Filename</string>
+        <string>Copies</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Name</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Path</string>
        </property>
       </column>
       <column>
@@ -45,6 +77,20 @@
         <string>Size</string>
        </property>
       </column>
+      <item>
+       <property name="text">
+        <string>Новый элемент</string>
+       </property>
+       <property name="foreground">
+        <brush brushstyle="NoBrush">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </property>
+      </item>
      </widget>
     </item>
    </layout>
@@ -55,7 +101,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>27</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -87,14 +133,21 @@
    </attribute>
    <addaction name="actionScan_Directory"/>
   </widget>
+  <widget class="QStatusBar" name="statusBar"/>
   <action name="actionScan_Directory">
    <property name="text">
     <string>&amp;Scan Directory...</string>
+   </property>
+   <property name="iconText">
+    <string>Scan Directory</string>
    </property>
   </action>
   <action name="actionExit">
    <property name="text">
     <string>&amp;Exit</string>
+   </property>
+   <property name="toolTip">
+    <string>Exit</string>
    </property>
   </action>
   <action name="actionAbout">
